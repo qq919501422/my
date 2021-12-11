@@ -1,0 +1,91 @@
+#map svg{
+    width : 1000px;
+    height: 1000px;
+}
+#roundbarcharts svg{
+    width : 1000px;
+    height: 1000px;
+}
+#scatterplots svg{
+    width : 1000px;
+    height: 1000px;
+}
+.tick{
+    color: white;
+}
+.xaxis{
+    color: white;
+}
+.yaxis{
+    color: white;
+}
+.header{
+    width: 100%;
+    margin: 0 auto;
+}
+#roundbarchart{
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+#roundbarchart svg{
+   margin-left: 20%;
+}
+#barchart{
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.legend{
+    color: #fff;
+}
+#linechartgdp{
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+#treemap{
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+#dataviz{
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+#LollipopChart{
+    width: 100%;
+
+    margin: 0 auto;
+    text-align: center;
+}
+.label, .bar-label {
+    font-weight: bold;
+    font-size: 12px;
+}
+.label {
+    font-weight: normal;
+}
+.chart-tooltip {
+    padding: 10px;
+    box-shadow: -12px 11px 5px -4px rgba(0,0,0,0.4);
+    border: solid 1px #ccc;
+}
+
+.highlight-data {
+    font-weight: bold;
+}
+.svg-tooltip {
+    background-color: #B0B0B0;
+    color: white;
+    padding: 10px;
+    box-shadow: -12px 11px 5px -4px rgba(0,0,0,0.4);
+    border: solid 1px #ccc;
+
+}

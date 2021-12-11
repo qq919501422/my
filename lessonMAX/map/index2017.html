@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello D3.js</title>
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!--    相对路径： ./ （同级目录） 和 ../ （上一级目录） ./d3/d3.js
+            绝对路径： /Users/alk/Documents/Projects/Lesson1/d3/d3.js-->
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<style>
+    .toolTip {
+        position: absolute;
+        display: none;
+        min-width: 30px;
+        max-width: 240px;
+        border-radius: 4px;
+        height: auto;
+        background: rgba(250,250,250, 0.9);
+        border: 1px solid #DDD;
+        padding: 4px 8px;
+        font-size: .85rem;
+        text-align: left;
+        z-index: 1000;
+    }
+</style>
+<body id="map">
+
+<div id="dataviz" >
+    <el-dialog :modal="false" title="该地区详细数据" :visible.sync="dialogTableVisible"  modal:false>
+        <el-table  :data="gridData">
+            <el-table-column property="Countrys" label="地区" ></el-table-column>
+            <el-table-column property="HappinessRanks" label="幸福排名" ></el-table-column>
+            <el-table-column property="HappinessScores" label="幸福指数"></el-table-column>
+            <el-table-column property="EconomyGDPperCapitas" label="GDP指数"></el-table-column>
+            <el-table-column property="HealthLifeExpectancys" label="健康寿命指数"></el-table-column>
+            <el-table-column property="Familys" label="家庭指数"></el-table-column>
+            <el-table-column property="Freedoms" label="自由指数"></el-table-column>
+            <el-table-column property="TrustGovernmentCorruptions" label="政府腐败指数"></el-table-column>
+            <el-table-column property="Generositys" label="慷慨指数"></el-table-column>
+            <el-table-column property="DystopiaResiduals" label="反乌托邦残余指数"></el-table-column>
+        </el-table>
+    </el-dialog>
+<svg  id="my_dataviz" width="800" @click="huoqushuju()" height="600"></svg>
+</div>
+<script>
+    new Vue({
+        el: '#dataviz',
+        data: {
+            gridData: [{
+                 Countrys:"",
+                 HappinessRanks:"",
+                HappinessScores:"",
+               EconomyGDPperCapitas:"",
+                 HealthLifeExpectancys:"",
+                Familys:"",
+                Freedoms:"",
+                TrustGovernmentCorruptions:"",
+                Generositys:"",
+                DystopiaResiduals:"",
+            }],
+            dialogTableVisible: false
+
+        },
+        computed: {
+            huoqushuju:function() {
+           this.gridData[0].Countrys= returnCountrys();
+                this.gridData[0].HappinessRanks= returnHappinessRanks();
+                this.gridData[0].HappinessScores= returnHappinessScores();
+                this.gridData[0].EconomyGDPperCapitas= returnEconomyGDPperCapitas();
+                this.gridData[0].HealthLifeExpectancys= returnHealthLifeExpectancys();
+                this.gridData[0].Familys= returnFamilys();
+                this.gridData[0].Freedoms= returnFreedoms();
+                this.gridData[0].TrustGovernmentCorruptions= returnTrustGovernmentCorruptions();
+                this.gridData[0].Generositys= returnGenerositys();
+                this.gridData[0].DystopiaResiduals= returnDystopiaResiduals();
+
+                this.dialogTableVisible = true;
+                location.load();
+
+            },
+
+        }
+    })
+</script>
+<script src = "index2017.js"></script>
+</body>
+</html>
